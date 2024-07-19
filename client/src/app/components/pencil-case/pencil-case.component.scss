@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gap {
+    gap: 5px;
+}
+
+.full-w {
+    width: 100%;
+}
+
+.full-h {
+    height: 197px;
+}
+
+.vertical-text {
+    margin: -5px 0;
+}
+
+.flex-middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 5px;
+}

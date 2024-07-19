@@ -1,0 +1,9 @@
+<div class='image-container'>
+    <canvas
+        (mousedown)='handleMouseDown($event)'
+        (mousemove)='handleMouseMove($event)'
+        (mouseenter)='handleMouseEnter($event)'
+        height='480' width='640' class='image-foreground' #foreground>
+    </canvas>
+    <canvas height='480' width='640' class='imageBox' #background></canvas>
+</div>

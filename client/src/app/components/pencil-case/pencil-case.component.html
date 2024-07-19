@@ -1,0 +1,51 @@
+<div class='container'>
+    <div>Épaisseur: {{getThickness()}}px</div>
+    <mat-slider (valueChange)='changeThickness($event)' min="1" max="25" step="1" value="13">></mat-slider>
+    <div class='flex-middle'>
+        <button mat-raised-button (click)='undo()' [disabled]='isUndoDisabled()' >Undo <mat-icon>undo</mat-icon></button>
+        <button mat-raised-button (click)='redo()' [disabled]='isRedoDisabled()'><mat-icon>redo</mat-icon> Redo</button>
+    </div>
+    <br>
+    <div class='flex-middle'>
+        <button class='full-h' mat-raised-button (click)='clearCanvas.emit("original")'>
+            <mat-icon>clear</mat-icon>
+            <div class='vertical-text'>Effacer</div>
+            <div class='vertical-text'>dessin</div>
+            <div class='vertical-text'>gauche</div>
+        </button>
+        <mat-button-toggle-group (change)='changeMode($event)' [value]='"none"' [vertical]='true'>
+            <mat-button-toggle matTooltip='Pencil' [matTooltipPosition]='"above"' value='pencil'>
+                <mat-icon>edit</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle matTooltip='Eraser' [matTooltipPosition]='"left"' value='eraser'>
+                <mat-icon><img width='95%' src='assets/eraser.svg' alt='Eraser'/></mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle matTooltip='Rectangle or Square (Shift)' [matTooltipPosition]='"right"' value='rectangle'>
+                <mat-icon>crop_square</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle matTooltip='Flood Fill' [matTooltipPosition]='"left"' value='fill'>
+                <mat-icon> format_color_fill</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle matTooltip='Mouse' value='none'>
+                <mat-icon>mouse</mat-icon>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+        <button class='full-h' mat-raised-button (click)='clearCanvas.emit("modified")'>
+            <mat-icon>clear</mat-icon>
+            <div class='vertical-text'>Effacer</div>
+            <div class='vertical-text'>dessin</div>
+            <div class='vertical-text'>droite</div>
+        </button>
+    </div>
+    <br>
+    <div class='container gap'>
+        <button class='full-w' mat-raised-button (click)='switch.emit()'><mat-icon>compare_arrows</mat-icon> Inverser les dessins</button>
+        <button class='full-w' mat-raised-button (click)='clearCanvas.emit("both")'><mat-icon>clear</mat-icon>Réinitialiser les dessins</button>
+        <button class='full-w' mat-raised-button (click)='copyCanvas.emit("original")'>Dessin gauche sur dessin droit</button>
+        <button class='full-w' mat-raised-button (click)='copyCanvas.emit("modified")'>Dessin droit sur dessin gauche</button>
+    </div>
+    <br>
+    <div>
+        <input type="color" [value]='color' (change)='changeColor($event)'>
+    </div>
+</div>

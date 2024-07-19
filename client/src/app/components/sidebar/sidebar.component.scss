@@ -1,0 +1,36 @@
+div {
+    width: 80%;
+    height: 15.5%;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+#sidebar-container {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    height: 15.5%;
+    background-image: linear-gradient(#f2c94c, #f2994a);
+}
+
+#timer {
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+#clues {
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.diff-counter {
+    left: 75%;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+.clock {
+    margin-top: 5%;
+    margin-left: 10%;
+}

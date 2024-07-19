@@ -1,0 +1,22 @@
+<div id="grid-container">
+    <div class='canvas-container'>
+        <canvas id="originalFg" class='canvas-foreground' #originalFg (click)="mouseHitDetect($event)" [attr.width]="width" [attr.height]="height"></canvas>
+        <canvas id="originalImage" #originalCanvas [attr.width]="width" [attr.height]="height"></canvas>
+    </div>
+    <div class='canvas-container'>
+        <canvas id="modifiedFg" class='canvas-foreground' #modifiedFg (click)="mouseHitDetect($event)" [attr.width]="width" [attr.height]="height"> </canvas>
+        <canvas id="modifiedImage" #modifiedCanvas [attr.width]="width" [attr.height]="height"> </canvas>
+    </div>
+</div>
+
+<div class='replay-container' *ngIf='isReplayMode'>
+    <button [disabled] = '!isReplayPaused' mat-raised-button color='warn' (click)='replay()'>REVISIONNER</button>
+    <button [disabled] = '!replayHasCanvas' mat-raised-button color='primary' (click)='togglePause()'>
+        <mat-icon>{{ isReplayPaused ? 'play_arrow' : 'pause' }}</mat-icon>
+    </button>
+    <mat-radio-group id='radio-group' aria-label='Vitesse' [(ngModel)]='replaySpeed'>
+        <mat-radio-button value='1'>1x</mat-radio-button>
+        <mat-radio-button value='2'>2x</mat-radio-button>
+        <mat-radio-button value='4'>4x</mat-radio-button>
+    </mat-radio-group>
+</div>

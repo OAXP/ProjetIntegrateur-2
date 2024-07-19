@@ -1,0 +1,7 @@
+<div class="mat-dialog-content">
+    <div id="end-game" appearance="fill">
+        <p mat-dialog-content *ngIf="hasWon">Vous avez gagné !</p>
+        <p mat-dialog-content *ngIf="!hasWon">Vous avez perdu</p>
+    </div>
+    <button class="mat-raised-button" (click)="closeGame()">Retour à l'accueil</button>
+</div>

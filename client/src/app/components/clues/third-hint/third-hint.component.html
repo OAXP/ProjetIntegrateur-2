@@ -1,0 +1,11 @@
+<div class="modal">
+    <div class="exit-message" appearance="fill">
+        <p>Couleur d'un pixel original:</p>
+    </div>
+    <div class="colorSquare" [ngStyle]="{ 'background-color': 'rgb(' + original.r + ',' + original.g + ',' + original.b + ')' }"></div>
+    <div class="exit-message" appearance="fill">
+        <p>Couleur modifier de ce pixel:</p>
+    </div>
+    <div class="colorSquare" [ngStyle]="{ 'background-color': 'rgb(' + modified.r + ',' + modified.g + ',' + modified.b + ')' }"></div>
+    <button class="mat-raised-button" (click)="close()">Fermer</button>
+</div>

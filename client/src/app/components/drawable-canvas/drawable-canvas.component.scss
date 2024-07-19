@@ -1,0 +1,14 @@
+.image-container {
+    position: relative;
+}
+
+.image-foreground {
+    position: absolute;
+    left: 0;
+    border: 1px solid transparent;
+}
+
+.imageBox {
+    border: 1px solid black;
+    pointer-events: none;
+}

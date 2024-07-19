@@ -1,0 +1,79 @@
+.info-container-upper {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1em;
+    align-items: center;
+    height: 5%;
+    background-image: linear-gradient(#f2994a, #f2c94c);
+}
+
+.game-constants {
+    display: flex;
+    margin-right: 5%;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.selectionpartie {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    gap: 0 0;
+    height: 90%;
+    margin-left: 6%;
+}
+
+.selector {
+    display: flex;
+    justify-content: center;
+}
+
+#left_arrow,
+#right_arrow {
+    width: 3vw;
+}
+
+.selector button:disabled {
+    background-color: grey;
+    cursor: default;
+    color: darkgray;
+}
+
+.creation {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.info-container-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    background-image: linear-gradient(#f2994a, #f2c94c);
+}
+
+.doubleArrows {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.doubleArrows button {
+    //background-color: rgb(26, 102, 216, 0.9);
+    height: 20px;
+    width: 15px;
+    padding-inline: 15px;
+    min-width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    margin-left: 20px;
+}
+
+.cancelButton {
+    background-color: red;
+    color: white;
+}

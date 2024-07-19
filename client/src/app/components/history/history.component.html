@@ -1,0 +1,29 @@
+<h1 class="title">Historique des parties jouées</h1>
+<div class="grid-container">
+    <div class="grid-item">Date et heure</div>
+    <div class="grid-item">Durée (secondes)</div>
+    <div class="grid-item">Mode</div>
+    <div class="grid-item">Nom du premier joueur</div>
+    <div class="grid-item">Nom du deuxième joueur (si existant)</div>
+</div>
+<div class="grid-container" *ngFor="let currentGameStat of gamesStatistics">
+    <div class="grid-item">{{ reformatDate(currentGameStat.startTime) }}</div>
+    <div class="grid-item">{{ reformatDuration(currentGameStat.duration) }}</div>
+    <div class="grid-item">{{ currentGameStat.mode }}</div>
+    <div class="grid-item" [ngStyle]="setStyle(currentGameStat, currentGameStat.firstPlayerName)">
+        {{ currentGameStat.firstPlayerName }}
+    </div>
+    <div class="grid-item" [ngStyle]="setStyle(currentGameStat, currentGameStat.secondPlayerName)">
+        {{ currentGameStat.secondPlayerName }}
+    </div>
+</div>
+<div class="disposition">
+    <button mat-raised-button class="button" *ngIf="!resettingConfirmation" (click)="toggleResetConfirmation()" [disabled]="!gamesStatistics.length">
+        Réinitialiser l'historique
+    </button>
+    <button mat-raised-button class="button" *ngIf="resettingConfirmation" (click)="toggleResetConfirmation()">Annuler</button>
+    <button mat-raised-button class="deleteButton button" *ngIf="resettingConfirmation" (click)="resetHistory()">
+        Confirmer la réinitialisation
+    </button>
+    <button mat-raised-button class="button" (click)="close()">Fermer</button>
+</div>

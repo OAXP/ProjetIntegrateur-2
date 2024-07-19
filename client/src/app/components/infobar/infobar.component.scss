@@ -1,0 +1,53 @@
+#infobar-container {
+    display: flex;
+    position: fixed;
+    width: 80%;
+    height: 15%;
+    background-image: linear-gradient(#f2994a, #f2c94c);
+}
+
+#infobar-container img {
+    height: 100px;
+    position: fixed;
+    overflow: auto;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+#mode {
+    position: fixed;
+    left: 15%;
+    max-width: 15%;
+    padding-top: 3%;
+}
+
+#difficulty {
+    position: fixed;
+    left: 31.5%;
+    max-width: 15%;
+    padding-top: 3%;
+}
+
+#player {
+    position: fixed;
+    left: 47%;
+    max-width: 15%;
+    padding-top: 3%;
+}
+
+#abandon-game {
+    position: relative;
+    left: 80%;
+    height: 40px;
+    margin-top: 3%;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    border: outset;
+    border-color: burlywood;
+}
+
+.text {
+    font-family: fantasy;
+    font-size: 30px;
+    font-weight: 200;
+}

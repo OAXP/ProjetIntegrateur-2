@@ -1,0 +1,4 @@
+<span *ngIf='isSolo()'>
+    Indices restants : {{ getHints() }} (Penalité : {{ penaltyTime }}s)
+    <img *ngIf='getHints() > 0 && !isReplay()' src="assets/magnifying_glass.png" (click)="useHint()" />
+</span>

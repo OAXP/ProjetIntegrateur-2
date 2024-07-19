@@ -1,0 +1,14 @@
+.container {
+    padding-block: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#radio-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}

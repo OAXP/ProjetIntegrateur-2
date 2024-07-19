@@ -1,0 +1,15 @@
+<div>
+    <form id = 'modalContainer'>
+        <div>
+            <input #gameName type='text' placeholder='Entrer le nom de votre jeu' maxlength= '15'/>
+        </div>
+        <div> Difficulté : {{ differenceResponse.difficulty }}</div>
+        <div>Nombre de différences : {{ differenceResponse.numberOfDifferences }}</div>
+        <img id = "diffImage" src='{{ baseUrl + differenceResponse.differenceImageUrl }}' alt='diff image'>
+        <div>
+            <div *ngIf='differenceResponse.numberOfDifferences < 3 || differenceResponse.numberOfDifferences > 9'>Nombre de différences invalides. Doit se situer entre 3 et 9</div>
+            <button [disabled] = "differenceResponse.numberOfDifferences >= 3 && differenceResponse.numberOfDifferences <= 9 ? null : true" mat-raised-button (click)='saveGame()'>Sauvegarder le jeu</button>
+        </div>
+        <div><button mat-raised-button (click)='closeModal()'>Annuler</button></div>
+    </form>
+</div>

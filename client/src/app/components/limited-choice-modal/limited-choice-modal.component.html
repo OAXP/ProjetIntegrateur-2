@@ -1,0 +1,12 @@
+<div class='container' mat-dialog-content>
+    <div>Veuillez choisir un nom et le mode :</div>
+    <mat-form-field appearance="fill">
+        <mat-label>Entrer votre nom:</mat-label>
+        <input matInput [(ngModel)]="name" maxlength="12" />
+    </mat-form-field>
+    <mat-radio-group id='radio-group' aria-label='Sélectionner le mode' [(ngModel)]='chosenMode'>
+        <mat-radio-button value='1'>Solo</mat-radio-button>
+        <mat-radio-button value='2'>Co-Op</mat-radio-button>
+    </mat-radio-group>
+    <button mat-raised-button (click)='confirmHandler()'>Confirmer</button>
+</div>

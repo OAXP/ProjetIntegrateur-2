@@ -1,0 +1,90 @@
+.example-card {
+    width: 85%;
+    max-height: 90%;
+    //background-color: var(--menu-bg-color);
+    margin-top: 5px;
+    transition: all 0.4s;
+}
+
+.example-card:hover {
+    transform: scale(1.01);
+    background-color: var(--menu-bg-color);
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+mat-card-content {
+    width: 40%;
+    height: 250px;
+}
+
+#main-img {
+    width: 28em;
+    height: 20em;
+}
+
+#podium {
+    position: relative;
+    width: 55%;
+    margin-left: 25%;
+    top: -55px;
+}
+
+.grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    top: -60px;
+    left: -30px;
+    height: 70%;
+}
+.grid-item {
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        display: inline;
+        margin: 0;
+    }
+}
+
+.delete {
+    position: relative;
+    top: 12px;
+    color: red;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    margin-right: 30px;
+}
+
+.score {
+    display: grid;
+    grid-template-columns: 1em 9em;
+}
+
+.deleteButton {
+    background-color: red;
+    color: white;
+}
+
+.disabled {
+    background-color: grey;
+    cursor: default;
+    color: darkgray;
+}
+
+.buttons-container {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    margin-right: 0;
+    left: 10%;
+    bottom: 15px;
+    gap: 5px;
+}

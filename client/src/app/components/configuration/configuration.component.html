@@ -1,0 +1,48 @@
+<div class="info-container-upper">
+    <div class="game-constants">
+        Temps initial du compte à rebours[{{ this.boundsConstants[0] }}, {{ this.boundsConstants[1] }}]: {{ gameConstant.initialTime }} secondes 
+        <div class="doubleArrows">
+            <button class="button" (click)="increment('initialTime')" id="init-inc">+</button>
+            <button class="button" (click)="decrement('initialTime')" id="init-dec">-</button>
+        </div>
+    </div>
+
+    <div class="game-constants">
+        Temps de pénalité pour l'utilisation d'un indice[{{ this.boundsConstants[4] }}, {{ this.boundsConstants[5] }}]: {{ gameConstant.penaltyTime }} secondes 
+        <div class="doubleArrows">
+            <button class="button" (click)="increment('penaltyTime')">+</button>
+            <button class="button" (click)="decrement('penaltyTime')">-</button>
+        </div>
+    </div>
+    <div class="game-constants">
+        Temps gagné avec la découverte d'une différence[{{ this.boundsConstants[2] }}, {{ this.boundsConstants[3] }}]: {{ gameConstant.bonusTime }} secondes 
+        <div class="doubleArrows">
+            <button class="button" (click)="increment('bonusTime')">+</button>
+            <button class="button" (click)="decrement('bonusTime')">-</button>
+        </div>
+    </div>
+
+    <button class="button" routerLink="/home">Menu principal</button>
+</div>
+<div class="selectionpartie">
+    <app-game *ngFor="let game of games" [gameInput]="game" [config]="true"></app-game>
+</div>
+
+<div class="info-container-bottom">
+    <div class="selector">
+        <button id="left_arrow" class="button" (click)="arrowLeft()" [disabled]="this.arrowToDisable[0]">
+            <mat-icon>arrow_left</mat-icon>
+        </button>
+        <button class="creation button" routerLink="/creation">Ajouter un jeu</button>
+        <button class="creation button" (click)="openHistoryModal()">Voir l'historique des parties jouées</button>
+        <button class="creation button" *ngIf="!resettingConfirmation" (click)="confirmReset()">Réinitialiser tous les jeux</button>
+        <button class="creation button" *ngIf="resettingConfirmation" (click)="resetGames()">Confirmer la réinitialisation</button>
+        <button class="cancelButton button" *ngIf="resettingConfirmation" (click)="confirmReset()">Annuler</button>
+        <button class="creation button" *ngIf="!deletionConfirmation" (click)="confirmDelete()">Supprimer tous les jeux</button>
+        <button class="creation button" *ngIf="deletionConfirmation" (click)="deleteGames()">Confirmer la suppression</button>
+        <button class="cancelButton button" *ngIf="deletionConfirmation" (click)="confirmDelete()">Annuler</button>
+        <button id="right_arrow" class="button" (click)="arrowRight()" [disabled]="this.arrowToDisable[1]">
+            <mat-icon>arrow_right</mat-icon>
+        </button>
+    </div>
+</div>

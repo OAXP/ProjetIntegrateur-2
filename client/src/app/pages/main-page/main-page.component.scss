@@ -1,0 +1,88 @@
+.container {
+    min-height: 100vh;
+    height: auto;
+    background-size: cover;
+    background-image: url("../../../assets/background.png");
+}
+
+.justified {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-name {
+    margin-top: 20px;
+    margin-bottom: 0.25em;
+    color: var(--main-text-color);
+    font-size: large;
+}
+
+.header-item {
+    background-color: var(--base-bg-color);
+    padding-top: 20px;
+    padding-inline: 20px;
+    padding-bottom: 10px;
+    border-radius: 0 0 10px 10px;
+    color: var(--main-text-color);
+    font-family: Sora, sans-serif;
+    justify-content: center;
+    text-align: center;
+    transition: transform .4s;
+}
+
+.header-item:hover {
+    transform: scale(1.1) translateY(4px);
+}
+
+.footer-item {
+    display: block;
+    text-align: center;
+    background-color: var(--base-bg-color);
+    border-radius: 10px 10px 0 0;
+    padding-inline: 20px;
+    padding-block: 10px;
+    transition: transform .4s
+}
+
+.footer-item:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--main-text-color);
+}
+
+.profile {
+    display: block;
+    border-radius: 10px;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.big {
+    width: 200px;
+    height: 300px;
+    font-size: x-large;
+}
+
+.bigger {
+    width: 250px;
+    height: 350px;
+    font-size: x-large;
+}

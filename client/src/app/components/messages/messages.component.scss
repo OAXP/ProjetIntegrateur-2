@@ -1,0 +1,39 @@
+p {
+    border-radius: 5px;
+    width: auto;
+    padding: 4% 4% 2% 2%;
+    font-size: 18px;
+}
+
+div {
+    margin: 1% 1% 2% 2%;
+}
+
+#message-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+}
+span {
+    font-style: italic;
+}
+.event {
+    color: red;
+}
+
+.firstPlayerMessage {
+    color: brown;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+.secondPlayerMessage {
+    color: orange;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+.record {
+    color: #b29849;
+}

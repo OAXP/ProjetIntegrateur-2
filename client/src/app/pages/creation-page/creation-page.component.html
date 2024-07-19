@@ -1,0 +1,44 @@
+<div class="bar">
+    <div><img src="assets/logo.png" alt="logo" /></div>
+    <div>
+        <h1 class="title">Création de jeu</h1>
+        <h4>Veuillez insérer des images BMP 24-bits 640x480</h4>
+    </div>
+    <div><button class='button' (click)="returnConfig()">Retour à la configuration</button></div>
+</div>
+<div class='container'>
+    <div class='area'>
+        <label for='originalImage'> Sélectionner l'image originale : </label>
+        <input type='file' id='originalImage' class='input' accept='image/bmp' (change)='upload($event, "#original")' #originalInput>
+        <app-drawable-canvas #originalCanvas></app-drawable-canvas>
+    </div>
+    <app-pencil-case (copyCanvas)='copyCanvas($event)' (clearCanvas)='clearCanvas($event)' (switch)='switchCanvas()'></app-pencil-case>
+    <div class='area'>
+        <label for='modifiedImage'> Sélectionner l'image modifiée : </label>
+        <input type='file' id='modifiedImage' class='input' accept='image/bmp' (change)='upload($event, "#modified")' #modifiedInput>
+        <app-drawable-canvas #modifiedCanvas></app-drawable-canvas>
+    </div>
+</div>
+<div class="container">
+    <label for="doubleUpload"> Insérer une image dans les 2 zones : &nbsp;</label>
+    <input type="file" id="doubleUpload" class="input" accept="image/bmp" (change)="upload($event, '#original'); upload($event, '#modified')" #fullInput />
+</div>
+<div class="container">
+    <button mat-raised-button (click)="clear()">Réinitialiser</button>
+</div>
+<div class="bar-bot">
+    <div class='center'>
+        <label for="rayon"> Entrez rayon d'élargissement : &nbsp;</label>
+        <mat-form-field appearance="fill">
+            <select matNativeControl id="rayon" (input)="updateRadius($event)">
+                <option value="0">0 pixels</option>
+                <option value="3" selected>3 pixels</option>
+                <option value="9">9 pixels</option>
+                <option value="15">15 pixels</option>
+            </select>
+        </mat-form-field>
+    </div>
+    <div class='center'>
+        <button class='button' (click)="getDifferences()">Valider et créer</button>
+    </div>
+</div>

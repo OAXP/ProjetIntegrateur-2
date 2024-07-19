@@ -1,0 +1,9 @@
+<div id="message-container">
+    <div class="message" *ngFor="let message of getMessages()">
+        <span *ngIf="message.title !== 'record'">{{ message.date | date: 'hh:mm:ss' }}</span>
+        <p *ngIf="message.title === 'event'" class="event">{{ message.body }}</p>
+        <p *ngIf="message.title === getPlayerName()" class="firstPlayerMessage">{{ message.title }} : {{ message.body }}</p>
+        <p *ngIf="message.title === getSecondPlayerName()" class="secondPlayerMessage">{{ message.title }} : {{ message.body }}</p>
+        <p *ngIf="message.title === 'record'" class="record">{{ message.date | date: 'hh:mm:ss' }} - {{ message.body }}</p>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div id="message-section">
+    <div id="message-section-title"><p id="title">Messages</p></div>
+    <div id="message-zone">
+        <app-messages id="message-display"></app-messages>
+    </div>
+    <div id="message-box">
+        <textarea class="disabled-text-area" disabled *ngIf="!isDuoMode() || getEndGame()" id="typing-area" placeholder="Tapez un message"></textarea>
+        <textarea
+            [(ngModel)]="this.input"
+            class="enabled-text-area"
+            *ngIf="isDuoMode() && !getEndGame()"
+            id="typing-area"
+            placeholder="Tapez un message"
+            maxlength="200"
+            (change)="setIsTyping(false)"
+            (input)="setIsTyping(true)"
+            (click)="setIsTyping(true)"
+            (keyup.enter)="sendMessage()"
+            #inputText
+        ></textarea>
+        <button disabled *ngIf="!isDuoMode() || getEndGame()" id="send-button" type="submit">Envoyer</button>
+        <button *ngIf="isDuoMode() && !getEndGame()" id="send-button" type="submit" (click)="sendMessage()">Envoyer</button>
+    </div>
+</div>

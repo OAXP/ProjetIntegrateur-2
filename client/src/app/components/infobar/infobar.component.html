@@ -1,0 +1,11 @@
+<div id="infobar-container">
+    <div id="logo"><img src="assets/logo.png" /></div>
+    <div id="mode" class="text">Mode de jeu : {{ this.getGameMode() }}</div>
+    <div id="difficulty" class="text" *ngIf='isClassicGame()'>Difficulté : {{ this.getDifficulty() }}</div>
+    <div id="player" class="text">Joueur : {{ this.getPlayerName() }}</div>
+    <button id="abandon-game" class="text" (click)="abandonGame()">
+        <span *ngIf='getReplayMode()'> Quitter le replay</span>
+        <span id="abandon" *ngIf="!this.getEndGame() && !getReplayMode()">Abandonner la partie</span>
+        <span id="leave" *ngIf="this.getEndGame() && !getReplayMode()">Quitter la partie</span>
+    </button>
+</div>

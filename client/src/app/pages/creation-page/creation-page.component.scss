@@ -1,0 +1,65 @@
+.image-container {
+    position: relative;
+}
+
+.image-foreground {
+    position: absolute;
+    left: 0;
+    border: 1px solid transparent;
+}
+
+.imageBox {
+    border: 1px solid black;
+    pointer-events: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+}
+
+.area {
+    display: inline-block;
+    padding: 1em;
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+
+.bar {
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(#f2994a, #f2c94c);
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1em;
+}
+
+.bar img {
+    height: 100px;
+}
+
+.bar-bot {
+    display: block;
+    position: absolute;
+    width: 100%;
+    padding-bottom: 1em;
+    bottom: 0;
+    background-image: linear-gradient(#f2994a, #f2c94c);
+}
+
+

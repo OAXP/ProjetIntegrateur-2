@@ -1,0 +1,8 @@
+<div class="modal">
+    <div class="exit-message" appearance="fill">
+        <p *ngIf="!gameStatus">Abandonner ?</p>
+        <p *ngIf="gameStatus">Quitter ?</p>
+    </div>
+    <button class="mat-raised-button" id="close-button" (click)="exitGame()">Oui</button>
+    <button class="mat-raised-button" id="cancel-button" (click)="close()">Non</button>
+</div>

@@ -1,0 +1,40 @@
+<div class="container justified">
+    <h1 class="header-item">Bienvenue au cours {{ title }}</h1>
+<!--    <h1>Jeu des différences</h1>-->
+<!--    <img src="assets/logo.png" />-->
+    <div class="button-container">
+        <button class="button card big" routerLink="/gameselection">Classique</button>
+        <button class="button card big" (click)='askLimitedChoice()'>Temps Limité</button>
+        <button class="button card big" routerLink="/config">Configuration</button>
+    </div>
+
+    <div class="footer-item">
+        <h4 class="team-name">Équipe 105 :</h4>
+        <div class='profile-container'>
+            <div>
+                <img class='profile' src='assets/anh.webp' />
+                <div>Anh</div>
+            </div>
+            <div>
+                <img class='profile' src='assets/anas.png' />
+                <div>Anas</div>
+            </div>
+            <div>
+                <img class='profile' src='assets/andy.png' />
+                <div>Andy</div>
+            </div>
+            <div>
+                <img class='profile' src='assets/louis.webp' />
+                <div>Louis</div>
+            </div>
+            <div>
+                <img class='profile' src='assets/ramata.png' />
+                <div>Ramata</div>
+            </div>
+            <div>
+                <img class='profile' src='assets/shady.png' />
+                <div>Shady</div>
+            </div>
+        </div>
+    </div>
+</div>

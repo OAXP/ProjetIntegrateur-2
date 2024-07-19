@@ -1,0 +1,29 @@
+p {
+    text-align: center;
+    font-family: fantasy;
+    font-size: 20px;
+}
+
+button {
+    justify-content: center;
+    font-family: fantasy;
+    font-size: 20px;
+    text-align: center;
+}
+
+.modal {
+    width: 25vh;
+}
+
+.colorSquare {
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#close-button {
+    margin-right: 5%;
+    margin-left: 5%;
+}

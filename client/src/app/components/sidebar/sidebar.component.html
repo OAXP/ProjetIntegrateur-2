@@ -1,0 +1,21 @@
+<div id="sidebar-container">
+    <div id="timer" class="text">Temps chrono
+        <app-chronometer *ngIf='!isReplay'></app-chronometer>
+        <div class = 'clock' *ngIf='isReplay'>
+            <span *ngIf="minute < 10" class="under-ten-minutes">0</span>{{ minute }} : <span *ngIf="second < 10" class="under-ten-seconds">0</span>{{ second }}
+        </div>
+    </div>
+    <div id="clues" class="text"><app-clues></app-clues></div>
+    <div class="diff-counter" *ngIf="getGameMode() === 'Solo'" id="solo-counter">
+        Différences trouvées : {{ getDifferences() }} / {{ getGameDifferences() }}
+    </div>
+    <div class="diff-counter" *ngIf="getGameMode() === 'Solo Limité' || getGameMode() === 'Duo Limité'">
+        Différences trouvées{{ getGameMode() === 'Solo Limité' ? '' : ' par vous et ' + getSecondPlayerName() }} : {{ getTotalDifferencesFound() }}
+    </div>
+    <div class="diff-counter" id="first-player-counter" *ngIf="getGameMode() === 'Duo'">
+        Vous avez trouvé :{{ getDifferences() }} / {{ getGameDifferences() }} différences
+    </div>
+    <div class="diff-counter" id="second-player-counter" *ngIf="getGameMode() === 'Duo'">
+        {{ getSecondPlayerName() }} a trouvé :{{ getTotalDifferencesFound() - getDifferences() }} / {{ getGameDifferences() }} différences
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 25% 19% 17% 19% 20%;
+}
+
+.grid-item {
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    background-color: var(--base-bg-color);
+}
+
+.disposition {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2%;
+}
+
+.deleteButton {
+    background-color: red;
+    color: white;
+}

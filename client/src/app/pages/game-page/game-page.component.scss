@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    width: 80%;
+}
+
+.play-area-container {
+    overflow: auto;
+    flex: 1 1 auto;
+    position: fixed;
+    height: 69.5%;
+    width: 80%;
+    top: 15%;
+}
+
+.play-area {
+    display: grid;
+    outline: none;
+}

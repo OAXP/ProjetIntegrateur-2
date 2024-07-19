@@ -1,0 +1,33 @@
+canvas {
+    border: 2px solid black;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.canvas-foreground {
+    position: absolute;
+    left: 0;
+    border: 2px solid transparent;
+}
+
+.canvas-container {
+    position: relative;
+}
+
+#grid-container {
+    display: flex;
+}
+
+.replay-container {
+    display: flex;
+    margin-top: 1em;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#radio-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}

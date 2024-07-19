@@ -1,0 +1,1 @@
+export const NUMBER_OF_GAMES_TO_DISPLAY = 4;

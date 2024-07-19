@@ -1,0 +1,8 @@
+<div class="mat-dialog-content">
+    <div id="end-game" appearance="fill">
+        <p mat-dialog-content *ngIf="!won">{{ winner }} a gagné la partie</p>
+        <p mat-dialog-content *ngIf="won">Vous avez gagné !</p>
+    </div>
+    <button class="mat-raised-button" (click)="closeGame()">Retour à l'accueil</button>
+    <button class="mat-raised-button" (click)="replayGame()">Revisionner la partie</button>
+</div>

@@ -1,0 +1,30 @@
+<div class="info-container">
+    <div class="home">
+        <button class='button' routerLink="/home">Menu principal</button>
+    </div>
+</div>
+<div class="selectionpartie">
+    <app-game *ngFor="let game of games" [gameInput]="game"></app-game>
+</div>
+
+<div class="info-container">
+    <div class="selector">
+        <button
+            id="left_arrow"
+            class="button"
+            (click)="arrowLeft()"
+            [disabled]="this.arrowToDisable[0]"
+        >
+            <mat-icon>arrow_left</mat-icon>
+        </button>
+
+        <button
+            id="right_arrow"
+            class="button"
+            (click)="arrowRight()"
+            [disabled]="this.arrowToDisable[1]"
+        >
+            <mat-icon>arrow_right</mat-icon>
+        </button>
+    </div>
+</div>

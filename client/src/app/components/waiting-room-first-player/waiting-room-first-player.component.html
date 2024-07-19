@@ -1,0 +1,14 @@
+<div class="content" *ngIf="secondUserName === ''">
+    <h1>En attente d'un deuxième joueur...</h1>
+    <div class="loader"></div>
+</div>
+
+<div class="content" *ngIf="secondUserName !== ''">
+    <h3>Ce joueur tente de débuter une partie avec vous:</h3>
+    <h1>{{ secondUserName }}</h1>
+</div>
+<div [ngClass]="secondUserName === '' ? 'content' : 'button'">
+    <button mat-raised-button (click)="cancel()" routerLink="/gameselection" mat-dialog-close>Annuler</button>
+    <button mat-raised-button color="warn" *ngIf="secondUserName" (click)="rejectPlayer()">Refuser le joueur</button>
+    <button mat-raised-button color="primary" *ngIf="secondUserName" (click)="acceptPlayer()" mat-dialog-close>Débuter la partie</button>
+</div>

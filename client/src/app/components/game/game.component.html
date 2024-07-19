@@ -1,0 +1,102 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>{{ this.gameInput.name }}</mat-card-title>
+        <mat-card-subtitle>Difficulté: {{ this.gameInput.difficulty }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-title-group>
+        <img mat-card-image id="main-img" [src]="this.serverEnvironment + this.gameInput.image1Url" />
+        <mat-card-content>
+            <img id="podium" mat-card-image src="assets/podium.jpg" />
+            <div class="grid-container" *ngIf="leaderboard">
+                <div class="grid-item"></div>
+                <div class="grid-item">SOLO</div>
+                <div class="grid-item">DUO</div>
+                <div class="grid-item"><img mat-card-image src="assets/gold.jpg" /></div>
+                <div class="grid-item">
+                    <div class="score">
+                        <div>
+                            <span *ngIf="leaderboard.leaderboardSolo[0].minutes < 10">0</span>{{ leaderboard.leaderboardSolo[0].minutes }}:<span
+                                *ngIf="leaderboard.leaderboardSolo[0].seconds < 10"
+                                >0</span
+                            >{{ leaderboard.leaderboardSolo[0].seconds }}
+                        </div>
+                        <div>{{ leaderboard.leaderboardSolo[0].player }}</div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="score">
+                        <div>
+                            <span *ngIf="leaderboard.leaderboardDuo[0].minutes < 10">0</span>{{ leaderboard.leaderboardDuo[0].minutes }}:<span
+                                *ngIf="leaderboard.leaderboardDuo[0].seconds < 10"
+                                >0</span
+                            >{{ leaderboard.leaderboardDuo[0].seconds }}
+                        </div>
+                        <div>{{ leaderboard.leaderboardDuo[0].player }}</div>
+                    </div>
+                </div>
+                <div class="grid-item"><img mat-card-image src="assets/silver.jpg" /></div>
+                <div class="grid-item">
+                    <div class="score" *ngIf="leaderboard.leaderboardSolo[1]">
+                        <div>
+                            <span *ngIf="leaderboard.leaderboardSolo[1].minutes < 10">0</span>{{ leaderboard.leaderboardSolo[1].minutes }}:<span
+                                *ngIf="leaderboard.leaderboardSolo[1].seconds < 10"
+                                >0</span
+                            >{{ leaderboard.leaderboardSolo[1].seconds }}
+                        </div>
+                        <div>{{ leaderboard.leaderboardSolo[1].player }}</div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="score" *ngIf="leaderboard.leaderboardDuo[1]">
+                        <div>
+                            <span *ngIf="leaderboard.leaderboardDuo[1].minutes < 10">0</span>{{ leaderboard.leaderboardDuo[1].minutes }}:<span
+                                *ngIf="leaderboard.leaderboardDuo[1].seconds < 10"
+                                >0</span
+                            >{{ leaderboard.leaderboardDuo[1].seconds }}
+                        </div>
+                        <div>{{ leaderboard.leaderboardDuo[1].player }}</div>
+                    </div>
+                </div>
+                <div class="grid-item"><img mat-card-image src="assets/bronze.jpg" /></div>
+                <div class="grid-item">
+                    <div class="score" *ngIf="leaderboard.leaderboardSolo[2]">
+                        <div>
+                            <span *ngIf="leaderboard.leaderboardSolo[2].minutes < 10">0</span>{{ leaderboard.leaderboardSolo[2].minutes }}:<span
+                                *ngIf="leaderboard.leaderboardSolo[2].seconds < 10"
+                                >0</span
+                            >{{ leaderboard.leaderboardSolo[2].seconds }}
+                        </div>
+                        <div>{{ leaderboard.leaderboardSolo[2].player }}</div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="score" *ngIf="leaderboard.leaderboardDuo[2]">
+                        <div>
+                            <span *ngIf="leaderboard.leaderboardDuo[2].minutes < 10">0</span>{{ leaderboard.leaderboardDuo[2].minutes }}:<span
+                                *ngIf="leaderboard.leaderboardDuo[2].seconds < 10"
+                                >0</span
+                            >{{ leaderboard.leaderboardDuo[2].seconds }}
+                        </div>
+                        <div>{{ leaderboard.leaderboardDuo[2].player }}</div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card-title-group>
+    <mat-card-actions class="buttons-container" *ngIf="!this.config">
+        <button class="button" (click)="openDialog('Solo')">Jouer</button>
+        <button class="button" *ngIf="!gameInput.available" (click)="openDialog('DuoCreate')">Créer</button>
+        <button class="button" *ngIf="gameInput.available" (click)="openDialog('DuoJoin')">Joindre</button>
+    </mat-card-actions>
+    <mat-card-actions class="buttons-container" *ngIf="this.config">
+        <button class="button" *ngIf="!resettingConfirmation" (click)="confirmReset()">Réinitialiser</button>
+        <button class="button" *ngIf="resettingConfirmation" (click)="confirmReset()">Annuler</button>
+        <button class="deleteButton button" *ngIf="resettingConfirmation" (click)="resetLeaderboards(this.gameInput.id!)">
+            Confirmer la réinitialisation
+        </button>
+        <button class="button" *ngIf="!deletionConfirmation" (click)="confirmDeletion()">Supprimer</button>
+        <button class="button" *ngIf="deletionConfirmation" (click)="confirmDeletion()">Annuler</button>
+        <button class="deleteButton button" *ngIf="deletionConfirmation" (click)="deleteGame(this.gameInput.id!)">Confirmer la suppression</button>
+    </mat-card-actions>
+</mat-card>

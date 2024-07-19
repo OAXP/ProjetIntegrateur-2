@@ -1,0 +1,8 @@
+<div class="content" *ngIf="!wasRejected">
+    <h1>En attente du premier joueur...</h1>
+    <div class="loader"></div>
+</div>
+<h1 *ngIf="wasRejected">Désolé, l'hôte vous refuse l'accès :(</h1>
+<div class="content">
+    <button mat-raised-button (click)="cancel()" routerLink="/gameselection" mat-dialog-close>Annuler</button>
+</div>
